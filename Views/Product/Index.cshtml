@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewBag.Title = "Product List";
+}
+    <h1 class="text-center">Product List</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Edit</td>
+                <td>Delete</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Price</td>
+                    <td><a class="btn btn-primary">Edit</a></td>
+                    <td><a class="btn btn-danger">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+<script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+@section Script
+{
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
+}
